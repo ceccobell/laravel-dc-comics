@@ -6,7 +6,10 @@
         <div class="row">
                 <img class="img-show-section" src="{{ $comic->thumb }}" alt="">
                 <div class="col-7 p-0 mt-5">
-                    <h3 class=" text-uppercase m-0 p-0">{{ $comic->title }}</h3>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h3 class=" text-uppercase m-0 p-0">{{ $comic->title }}</h3>
+                        <span class="py-2 px-3 bg-blue fw-semibold"><a class="text-decoration-none text-white" href="{{ route('comics.edit', $comic->id) }}">Modifica</a></span>
+                    </div>
                     <div class="row g-0">
                         <div class="mt-3 col-12 py-1 px-3">
                             <div class="d-flex text-light justify-content-between align-items-center">
