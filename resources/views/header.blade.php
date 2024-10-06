@@ -7,10 +7,10 @@
                     <div class="h-100">
                         <ul class="d-flex align-items-center list-unstyled h-100">
                             <li>
-                                <a href="" class="text-decoration-none text-black me-3">CHARACTERS</a>
+                                <a href="{{ route('home') }}" class="text-decoration-none text-black me-3">CHARACTERS</a>
                             </li>
                             <li>
-                                <a href="{{ route('comics') }}" class="text-decoration-none text-black me-3 {{ Route::currentRouteName() === 'comics' ? 'active' : ''}}">COMICS</a>
+                                <a href="{{ route('comics.index') }}" class="text-decoration-none text-black me-3 {{ Route::currentRouteName() === 'comics.index' ? 'active' : ''}}">COMICS</a>
                             </li>
                             <li>
                                 <a href="" class="text-decoration-none text-black me-3">MOVIES</a>
