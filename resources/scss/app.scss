@@ -73,3 +73,9 @@
     object-fit: cover;
     object-position: top;
 }
+
+.img-show-section {
+    height: auto;
+    width: 400px;
+    object-fit: contain;
+}

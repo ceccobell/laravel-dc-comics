@@ -13,9 +13,11 @@
             <div class="row bg-black">
                 <div class="content d-flex flex-wrap py-3"> 
                     @foreach ($comics as $comic)
-                        <div class="col-2 p-3">
-                            <img src="{{ $comic['thumb'] }}" alt="{{ $comic['title'] }}" class="img-card">
-                            <h6 class="text-white text-uppercase mt-2">{{ $comic['series'] }}</h6>
+                    <div class="col-2 p-3">
+                            <a class="text-decoration-none" href="{{ route('comics.show', ['comic' => $comic->id]) }}">
+                                <img src="{{ $comic['thumb'] }}" alt="{{ $comic['title'] }}" class="img-card">
+                                <h6 class="text-white text-uppercase mt-2">{{ $comic['series'] }}</h6>
+                            </a>
                         </div>
                     @endforeach
                     <div class="col-12 text-center mb-2">
