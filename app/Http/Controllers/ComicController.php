@@ -32,12 +32,23 @@ class ComicController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StoreComicRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreComicRequest $request)
     {
-        //
+        $validatedData = $request->validated();
+
+        $new_comic = new Comic();
+        $new_comic->fill($validatedData);
+
+        // Gestione dei campi 'artists' e 'writers' come JSON
+        $new_comic->artists = json_encode(explode(',', $validatedData['artists']));
+        $new_comic->writers = json_encode(explode(',', $validatedData['writers']));
+
+        $new_comic->save();
+
+        return redirect()->route('comics.index');
     }
 
     /**
